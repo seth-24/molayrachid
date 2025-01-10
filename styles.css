@@ -1,114 +1,184 @@
+/* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+/* Layout Setup */
 body {
-    background-color: #f4f4f9;
-    color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Ensures body takes up at least the full height of the screen */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10;
+  background-color: #1a3c6d; /* Navy Blue */
+  color: white;
+  padding: 20px 0;
+  text-align: center;
 }
 
-header .logo img {
-    height: 50px;
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-nav ul {
-    list-style-type: none;
-    display: flex;
+header nav ul li {
+  font-weight: 600;
 }
 
-nav ul li {
-    margin-right: 20px;
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  transition: color 0.3s ease-in-out;
 }
 
-nav ul li a {
-    color: #333;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 5px;
-    transition: color 0.3s, transform 0.3s;
+header nav ul li a:hover {
+  color: #ff7f50; /* Coral for hover effect */
 }
 
-nav ul li a:hover {
-    color: #ff6347;
-    transform: scale(1.1);
+/* Hero Section */
+#hero {
+  background: linear-gradient(135deg, #1a3c6d 0%, #56a3f7 100%); /* Blue gradient */
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
 }
 
-section {
-    padding: 80px 20px 40px;
-    text-align: center;
-    margin-top: 60px; /* to avoid header overlap */
-    flex: 1; /* This ensures the content section takes up remaining space */
+#hero h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
 }
 
-section h2 {
-    margin-bottom: 20px;
+#hero p {
+  font-size: 1.5em;
+  margin-bottom: 30px;
 }
 
-section p {
-    margin-bottom: 20px;
-    font-size: 1.1em;
+.btn-primary {
+  background-color: #ff7f50; /* Coral */
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-size: 1.1em;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
 }
 
-form {
-    max-width: 400px;
-    margin: 0 auto;
-    text-align: left;
+.btn-primary:hover {
+  background-color: #ff6347; /* Darker Coral */
 }
 
-form label {
-    display: block;
-    margin: 10px 0 5px;
+/* News Section */
+#news {
+  padding: 50px 20px;
+  background-color: #f4f4f4; /* Light Gray */
+  text-align: center;
 }
 
-form input, form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+#news h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
 }
 
-form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #ff6347;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+#news ul {
+  list-style: none;
 }
 
-form button:hover {
-    background-color: #e53e36;
+#news ul li {
+  margin: 10px 0;
 }
 
+#news ul li a {
+  text-decoration: none;
+  color: #1a3c6d;
+  font-size: 1.2em;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+#news ul li a:hover {
+  color: #ff7f50; /* Hover color */
+}
+
+/* Footer */
 footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    width: 100%;
-    position: relative;
-    bottom: 0;
+  background-color: #1a3c6d; /* Matching the header */
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: auto; /* Keeps the footer at the bottom */
+}
+
+.footer-content p {
+  margin-bottom: 10px;
+  font-size: 1em;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 1.2em;
+  transition: color 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+  color: #ff7f50; /* Coral for hover effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #hero h1 {
+    font-size: 2.5em;
+  }
+
+  #hero p {
+    font-size: 1.2em;
+  }
+
+  #news h2 {
+    font-size: 1.8em;
+  }
+
+  .btn-primary {
+    font-size: 1em;
+    padding: 12px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  #hero {
+    padding: 80px 20px;
+  }
+
+  #hero h1 {
+    font-size: 2em;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
 }
